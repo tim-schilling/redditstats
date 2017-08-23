@@ -1,0 +1,27 @@
+{% load humanize %}
+<div class="two-col">
+  {% for mod in mods %}
+  <div class="card">
+    <div class="card-divider">{{ mod.username }}</div>
+    <div class="card-section">
+      <dl>
+        <dt>Aggressions</dt><dd>{{ mod.post_count|default_if_none:0|add:mod.comment_count }}</dd>
+        <dt>Latest</dt>
+        <dd>
+          {% if mod.latest_post and mod.latest_comment %}
+            {% if mod.latest_post > mod.latest_comment %}
+              {{ mod.latest_post|date:"l, M jS" }}
+            {% else %}
+              {{ mod.latest_comment|date:"l, M jS" }}
+            {% endif %}
+          {% elif mod.latest_post %}
+            {{ mod.latest_post|date:"l, M jS" }}
+          {% elif mod.latest_comment %}
+            {{ mod.latest_comment|date:"l, M jS" }}
+          {% else %}N/A{% endif %}
+        </dd>
+      </dl>
+    </div>
+  </div>
+  {% endfor %}
+</div>

@@ -1,0 +1,149 @@
+{% load staticfiles humanize %}
+<!DOCTYPE html>
+<html lang="en" style="" class=" js no-touch svg inlinesvg svgclippaths no-ie8compat">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Homebrewing in Review</title>
+  <link href="{% static 'foundation-6.4.2-custom/css/foundation.css' %}" media="screen" rel="stylesheet">
+  <link href="{% static 'foundation-icons/foundation-icons.css' %}" media="screen" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
+  <link href="{% static 'app.css' %}" media="screen" rel="stylesheet">
+</head>
+
+<body>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-105151456-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<section role="main" class="body">
+  <div id="css-newspaper-page">
+    <div id="masthead">
+      <div class="">
+        <p><strong>{% now "l" %}</strong> {% now "F j, Y" %}</p>
+      </div>
+      <h1 class="paper-title" style="font-size:6em;">The Lurking Gazette</h1>
+    </div>
+
+    <div class="remote-load" data-url="{% url 'partials:comment:top_short' %}"></div>
+    <div class="grid-x grid-padding-x">
+      <div class="small-8 cell" id="mainStory">
+        <div class="figure">
+          <a href="{{ image_url }}">
+            <img src="{{ image_url }}.jpg" style="margin-bottom: 1em;">
+          </a>
+        </div>
+        <h1><a href="{{ image_post.reddit_link }}">{{ image_post.title }}</a></h1>
+        <p class="lead">{{ image_post.author.username }}, {{ image_post.created|date:"l" }}</p>
+
+        <div class="grid-x grid-margin-x small-up-3">
+          <div class="cell">
+            <div class="card">
+              <div class="card-divider">Asking the right stuff</div>
+              <div class="card-section">
+                <div class="remote-load" data-url="{% url 'partials:user:top_questions' %}"></div>
+                <h6 class="subheader" style="font-size: 0.75em;">Q&A question score</h6>
+              </div>
+            </div>
+          </div>
+          <div class="cell">
+            <div class="card">
+              <div class="card-divider">Paying it forward</div>
+              <div class="card-section">
+                <div class="remote-load" data-url="{% url 'partials:user:top_answers' %}"></div>
+                <h6 class="subheader" style="font-size: 0.75em;">Q&A answer score</h6>
+              </div>
+            </div>
+          </div>
+          <div class="cell">
+
+            <div class="card">
+              <div class="card-divider">Show-offs</div>
+              <div class="card-section">
+                <div class="remote-load" data-url="{% url 'partials:user:post_count' %}"></div>
+                <h6 class="subheader" style="font-size: 0.75em;">Posts</h6>
+              </div>
+            </div>
+          </div>
+          <div class="cell">
+            <div class="card">
+              <div class="card-divider">The popular kids</div>
+              <div class="card-section">
+                <div class="remote-load" data-url="{% url 'partials:user:post_score' %}"></div>
+                <h6 class="subheader" style="font-size: 0.75em;">Post score</h6>
+              </div>
+            </div>
+          </div>
+          <div class="cell">
+
+            <div class="card">
+              <div class="card-divider">Always around</div>
+              <div class="card-section">
+                <div class="remote-load" data-url="{% url 'partials:user:comment_count' %}"></div>
+                <h6 class="subheader" style="font-size: 0.75em;">Comments</h6>
+              </div>
+            </div>
+          </div>
+          <div class="cell">
+            <div class="card">
+              <div class="card-divider">Look at all that karma</div>
+              <div class="card-section">
+                <div class="remote-load" data-url="{% url 'partials:user:comment_score' %}"></div>
+                <h6 class="subheader" style="font-size: 0.75em;">Comment score</h6>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="small-4 cell">
+        <div class="aside">
+          <h4>Top Q&A Answers</h4>
+          <p>Stand in awe and wonder of their helpfulness.</p>
+          <div class="remote-load" data-url="{% url 'partials:comment:top_answers' %}"></div>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="grid-x">
+      <div class="large-auto cell">
+        <div class="remote-load" data-url="{% url 'partials:top_mentions' %}"></div>
+      </div>
+    </div>
+    <hr>
+    <div class="grid-x grid-margin-x">
+      <div class="small-8 cell">
+        <h2><a href="#">Best essay answer of the week!</a></h2>
+
+        <p>This week it's {{ essay_comment.author.username }} that has an eloquent way of making a point. You may want to grab a {{ beer_types|random }} while you digest this heavy prose.</p>
+
+          <div class="three-col">
+            {{ essay_comment.text|linebreaks }}
+          </div>
+      </div>
+      <div class="small-4 cell">
+        <h4>Tyrant Abuses</h4>
+        <div class="remote-load" data-url="{% url 'partials:mod_activity' %}"></div>
+      </div>
+    </div>
+    <hr>
+    <p class="right"><a href="#">Back to top</a></p>
+    <p class="paper-title">The Lurking Gazette <i class="fi-shield"></i></p>
+    <br>
+  </div>
+
+</section>
+
+<script src="{% static 'foundation-6.4.2-custom/js/vendor/jquery.js' %}"></script>
+<script src="{% static 'foundation-6.4.2-custom/js/vendor/what-input.js' %}"></script>
+<script src="{% static 'foundation-6.4.2-custom/js/vendor/foundation.js' %}"></script>
+<script src="{% static 'remoteLoad.js' %}"></script>
+</body>
+</html>

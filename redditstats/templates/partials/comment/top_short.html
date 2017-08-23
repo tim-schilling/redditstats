@@ -1,0 +1,7 @@
+  <ul class="featurettes">
+    {% for comment in comments %}
+      <li>
+        <a href="{{ comment.reddit_link }}">{{ comment.text }}</a> <cite>{{ comment.author.username }}</cite>
+      </li>
+    {% endfor %}
+  </ul>

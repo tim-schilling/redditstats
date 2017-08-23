@@ -1,0 +1,212 @@
+
+#css-newspaper-page {
+    width: 980px;
+    margin: 1em auto;
+}
+
+section[role="main"] {
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+
+ul.featurettes {
+    list-style-type: none;
+}
+
+/* Place all stylesheet code here */
+div#wrapper, p {
+    font: normal 13px/18px "Georgia", "Cambria", Times New Roman, Times, serif;
+    color: #444;
+}
+
+p {
+    margin-bottom: 0;
+    padding-bottom: 18px;
+}
+
+a {
+    text-decoration: none;
+}
+
+hr {
+    margin: 18px 0 17px;
+    border-color: #ccc;
+}
+
+div#header {
+    display: none;
+}
+
+div#wrapper {
+    padding: 36px 0 0;
+}
+
+div#container {
+    width: 980px;
+}
+div.three-col {
+    -moz-column-count: 3;
+    -webkit-column-count: 3;
+    column-count: 3;
+}
+
+/* Change up our fonts */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+h1 a, h2 a, h3 a {
+    font-weight: normal;
+}
+
+h1 a:hover, h2 a:hover, h3 a:hover {
+    color: #777;
+}
+
+h1 a:hover:after, h2 a:hover:after {
+    content: " \2192";
+}
+
+h1 {
+    font-size: 36px;
+    line-height: 1;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+p.lead {
+    color: #777;
+    font-size: 16px;
+    line-height: 20px;
+    margin: 0;
+    padding-bottom: 20px;
+}
+
+
+cite {
+    font-family: "Arial", Helvetica, Helvetica Neue, Verdana, sans-serif;
+}
+
+/* Update our figures */
+div.figure {
+    background: none;
+    position: relative;
+    overflow: hidden;
+    line-height: 1;
+    text-align: center;
+}
+
+div.figure img {
+    border: 0;
+    max-height: 500px;
+}
+
+div.figure cite {
+    background: rgba(0, 0, 0, .75);
+    width: 98%;
+    padding: 9px 0 9px 2.5%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 11px;
+    color: #fff;
+    opacity: 0;
+    -moz-opacity: 0;
+    filter: alpha(opacity=0);
+    -webkit-transition: opacity .5s linear;
+    -webkit-transition-delay: .2s;
+}
+
+div.figure cite strong {
+    color: #fff;
+}
+
+/* Make it look newsy */
+div#masthead {
+    margin-bottom: 15px;
+    text-align: center;
+    border-bottom: 5px solid #333;
+}
+
+div#masthead img {
+    margin-bottom: 27px;
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, .75)), to(rgba(0, 0, 0, 1)));
+}
+
+div#masthead div {
+    border-top: 1px solid #ddd;
+}
+
+div#masthead p {
+    width: 25%;
+    text-align: center;
+    color: #777;
+    margin: -10px auto 37px;
+    padding: 0;
+    background: #fff;
+    font-size: 14px;
+}
+
+div#masthead p strong {
+    color: #333;
+}
+
+ul.featurettes {
+    margin-bottom: 20px;
+    overflow: hidden;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #ccc;
+}
+
+ul.featurettes li {
+    float: left;
+    width: 222px;
+    color: #666;
+}
+
+ul.featurettes li + li {
+    margin-left: 14px;
+    padding-left: 15px;
+    border-left: 1px solid #ddd;
+}
+
+p.breaker {
+    -webkit-column-break-after: always;
+}
+
+div#mainStory p:first-child:first-letter {
+    font-size: 36px;
+    font-weight: bold;
+    float: left;
+    line-height: 1;
+    margin: 0 5px 0 0;
+}
+
+/* Briefings */
+dl.briefs {
+}
+
+dl.briefs dt {
+    font-size: 14px;
+}
+
+dl.briefs dd cite {
+    display: block;
+    color: #999;
+    font-size: 11px;
+}
+
+.paper-title {
+    font-family: 'Bangers', cursive;
+}
+
+dl.top-stories {
+    margin-top: -9px;
+}
+
+dl.top-stories dd {
+    margin-bottom: 9px;
+}

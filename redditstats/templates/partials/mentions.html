@@ -1,0 +1,13 @@
+<ul class="featurettes text-center" style="border: none;padding: 0; margin: 0">
+  {% for name, count in mentions.items %}
+    <li>
+      {% if forloop.first %}
+        <span style="-o-transform: rotate(-90deg);-ms-transform: rotate(-90deg);-webkit-transform: rotate(-90deg);-moz-transform: rotate(-90deg);transform: rotate(-90deg);text-align: left;float: left;margin-top: 25px;">
+          Mentions
+        </span>
+      {% endif %}
+      <h5>{{ name }}</h5>
+      <h1>{{ count }}</h1>
+    </li>
+  {% endfor %}
+</ul>
