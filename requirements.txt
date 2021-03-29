@@ -20,7 +20,7 @@ prawcore==0.11.0
 prompt-toolkit==1.0.15
 psycopg2==2.7.3
 ptyprocess==0.5.2
-Pygments==2.2.0
+Pygments==2.7.4
 python-binary-memcached==0.26.1
 pytz==2017.2
 requests==2.18.4
